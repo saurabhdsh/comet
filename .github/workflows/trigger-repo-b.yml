@@ -15,5 +15,5 @@ jobs:
           curl -X POST \
                 -H "Accept: application/vnd.github.v3+json" \
                -H "Authorization: token ${{ secrets.REPO_B_PAT }}" \
-                https://api.github.com/repos/macyatri/streamlit-main/actions/workflows/ci.yml/dispatches \
+                https://api.github.com/repos/saurabhdsh/streamlit-main/actions/workflows/ci.yml/dispatches \
                -d '{"ref":"main"}'
