@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Repo B Workflow
+      - name: Trigger streamlit-main Workflow
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.REPO_B_PAT }}" \
-            https://api.github.com/repos/ORGANIZATION_NAME/REPO_B/actions/workflows/WORKFLOW_FILE.yml/dispatches \
+            https://api.github.com/repos/macyatri/streamlit-main/actions/workflows/WORKFLOW_FILE.yml/dispatches \
             -d '{"ref":"main"}'
