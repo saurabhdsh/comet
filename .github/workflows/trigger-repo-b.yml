@@ -17,3 +17,5 @@ jobs:
                -H "Authorization: token ${{ secrets.REPO_B_PAT }}" \
                 https://api.github.com/repos/saurabhdsh/streamlit-main/actions/workflows/ci.yml/dispatches \
                -d '{"ref":"main"}'
+      - name: Node Path 
+        run: which node 
