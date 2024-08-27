@@ -1,0 +1,19 @@
+name: Trigger Repo B Workflow
+
+on:
+  push:
+    branches:
+      - main  # This triggers the workflow on push to the main branch
+
+jobs:
+  trigger-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Repo B Workflow
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.REPO_B_PAT }}" \
+            https://api.github.com/repos/ORGANIZATION_NAME/REPO_B/actions/workflows/WORKFLOW_FILE.yml/dispatches \
+            -d '{"ref":"main"}'
